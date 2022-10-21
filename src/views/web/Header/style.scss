@@ -1,0 +1,43 @@
+@import '@/assets/scss/index.scss';
+
+#header {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $primary;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    min-height: 150px;
+    width: 100%;
+
+    .logo {
+     display: flex;
+     justify-content: flex-start;     
+    }
+
+    .search{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    flex-wrap: wrap;
+    
+    .logo{
+      margin-top: 15px;
+    }
+    .search {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}
