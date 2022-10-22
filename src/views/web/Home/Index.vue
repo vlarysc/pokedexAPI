@@ -1,6 +1,7 @@
 <template>
   <div id="Home">    
     <div class="container">
+      <h3 v-if="resultSearch.length == 0">Pokemon não encontrado, para encontrar o Pokemon é necessário preencher o nome completo do mesmo.</h3>
       <div v-for="(item, index) in resultSearch" :key="item.url">
         <Card :name="item.name" :url="item.url" :id="index + 1" />
       </div>
@@ -29,6 +30,9 @@ export default {
   },
   computed: {
     ...mapState(['pokemon']),
+    teste() {
+    return  this.pokemons.includes(this.pokemon)
+    },
     resultSearch() {      
       if (this.pokemon.trim() != '') {        
         return this.pokemons.filter((pokemon) => pokemon.name.toUpperCase() == this.pokemon.toUpperCase());
